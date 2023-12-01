@@ -3,18 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
     <title> My To-Do list</title>
 </head>
 <body>
     <div class="container">
-        <input type="text" placeholder="What do you need">
-        <button data-add>Add</button>
-        <button data-delete>Delete</button>
-        <div data-list class="row">
-            <ul> </ul>
+        <div id="heading" class="row">
+            <h1> To-do list </h1>
+        </div>
+        <div class="row">
+            <button  data-sort id="Sort"> Sorting </button>
+            <input type="text" placeholder="Add items to your to do list...">
+            <button data-add id="Add"> Add </button>
+
+        </div>
+        <div  data-list class="row" >
+            <ul data-grocy id="groceries"></ul>
         </div>
     </div>
-    
+
     
 
     <script src="./script/code.js"></script>
