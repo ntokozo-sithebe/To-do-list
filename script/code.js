@@ -6,8 +6,7 @@ let list = [ ]
 
 function addList(){
     
-    let input = document.querySelector('[data-input]')
-
+    let input = document.querySelector('[data-input]').value
     list.push(input)
     localStorage.setItem('listItems', JSON.stringify(list))
     displayList()
@@ -15,19 +14,19 @@ function addList(){
 
 btnAdd.addEventListener('click', addList)
 
+let groceries = document.querySelector('[data-grocery]')
 
 function displayList(){
     
-    let groceries = document.querySelector('[data-grocy]')
-    
     let theList = JSON.parse(localStorage.getItem('listItems'))
-    if(theList){
+    
+    if(groceries){
         groceries.innerText = " "
-        theList.forEach(list =>{
-            groceries.innerHTML +=`<ul> ${list}</ul>`
+        theList.forEach(shop =>{
+            theList.innerHTML +=`<ul>${shop}</ul>`
         })
     }else{
-        groceries.innerHTML = 'Try Again';
+        groceries.innerHTML ='Try Again';
 
     }
 }
